@@ -1,0 +1,18 @@
+.epic-background {
+    position: relative;
+    background: linear-gradient(to bottom right, #e0f2ff, #ffffff);
+    overflow: hidden;
+  }
+  
+/* .epic-background::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  clip-path: polygon(100% 0, 100% 50%, 0 100%, 0 50%);
+  opacity: 0.08;
+  z-index: 0;
+} */
