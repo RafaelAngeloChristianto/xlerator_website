@@ -2,8 +2,8 @@ import React from "react";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { motion } from "framer-motion";
-import excellogo from "../assets/LOGO PT EXCEL.png"
-
+import excellogo from "../assets/LOGO PT EXCEL.png";
+import logo from "../assets/logo.png";
 
 export const AboutUs: React.FC = () => {
   return (
@@ -23,46 +23,57 @@ export const AboutUs: React.FC = () => {
             <h1 className="text-center text-4xl font-bold text-blue-800 font-display">
               What is XLERATOR?
             </h1>
+            <div className="flex flex-col md:flex-row items-center gap-10">
+              <img
+                src={logo}
+                alt="Xlerator Logo"
+                className="w-[250px] md:w-[300px] flex-shrink-0"
+              />
 
-            <motion.div
-              className="space-y-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <span className="font-semibold">English:</span>
-              <p className="text-lg leading-relaxed text-gray-700 text-justify">
-                Xlerator is a modern automotive product platform offering a wide
-                range of solutions including gasoline, diesel, engine oils, and
-                service products. With a clean and dynamic design, Xlerator aims
-                to simplify the shopping experience while delivering quality and
-                performance. Users can explore categories, access detailed
-                information, and find trusted products tailored to their vehicle
-                needs — all in one place. Whether you're maintaining, upgrading,
-                or fueling your engine, Xlerator accelerates your journey.
-              </p>
-            </motion.div>
+              <div className="flex-1 space-y-8">
+                <motion.div
+                  className="space-y-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="font-semibold">English:</span>
+                  <p className="text-lg leading-relaxed text-gray-700 text-justify">
+                    Xlerator is a modern automotive product platform offering a
+                    wide range of solutions including gasoline, diesel, engine
+                    oils, and service products. With a clean and dynamic design,
+                    Xlerator aims to simplify the shopping experience while
+                    delivering quality and performance. Users can explore
+                    categories, access detailed information, and find trusted
+                    products tailored to their vehicle needs — all in one place.
+                    Whether you're maintaining, upgrading, or fueling your
+                    engine, Xlerator accelerates your journey.
+                  </p>
+                </motion.div>
 
-            <motion.div
-              className="space-y-4 mt-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <span className="font-semibold">Indonesian:</span>
-              <p className="text-lg leading-relaxed text-gray-700 text-justify">
-                Xlerator adalah platform produk otomotif modern yang menawarkan
-                berbagai solusi, termasuk bensin, solar, oli mesin, dan produk
-                layanan lainnya. Dengan desain yang bersih dan dinamis, Xlerator
-                bertujuan untuk menyederhanakan pengalaman berbelanja sambil
-                memberikan kualitas dan performa terbaik. Pengguna dapat
-                menjelajahi berbagai kategori, mengakses informasi secara
-                detail, dan menemukan produk terpercaya yang sesuai dengan
-                kebutuhan kendaraan mereka — semuanya dalam satu tempat. Baik
-                untuk perawatan, peningkatan, maupun pengisian bahan bakar,
-                Xlerator mempercepat perjalanan Anda.
-              </p>
-            </motion.div>
+                <motion.div
+                  className="space-y-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <span className="font-semibold">Indonesian:</span>
+                  <p className="text-lg leading-relaxed text-gray-700 text-justify">
+                    Xlerator adalah platform produk otomotif modern yang
+                    menawarkan berbagai solusi, termasuk bensin, solar, oli
+                    mesin, dan produk layanan lainnya. Dengan desain yang bersih
+                    dan dinamis, Xlerator bertujuan untuk menyederhanakan
+                    pengalaman berbelanja sambil memberikan kualitas dan
+                    performa terbaik. Pengguna dapat menjelajahi berbagai
+                    kategori, mengakses informasi secara detail, dan menemukan
+                    produk terpercaya yang sesuai dengan kebutuhan kendaraan
+                    mereka — semuanya dalam satu tempat. Baik untuk perawatan,
+                    peningkatan, maupun pengisian bahan bakar, Xlerator
+                    mempercepat perjalanan Anda.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
           </motion.section>
 
           {/* pt */}
@@ -117,7 +128,11 @@ export const AboutUs: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                <img className="w-[400px] rounded-" src={excellogo} alt="Logo PT Excel" />
+                <img
+                  className="w-[400px] rounded-"
+                  src={excellogo}
+                  alt="Logo PT Excel"
+                />
               </motion.div>
             </div>
           </motion.section>
