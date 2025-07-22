@@ -14,7 +14,7 @@ export const NavBar: React.FC = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-8 text-sm font-medium mr-[50px]">
-        {["Home", "Products", "About Us"].map((item, index) => (
+        {["Home", "Products", "About Us", "Contact Us"].map((item, index) => (
           <Link
             key={index}
             to={
@@ -24,6 +24,8 @@ export const NavBar: React.FC = () => {
                 ? "/aboutus"
                 : item === "Products"
                 ? "/products"
+                : item === "Contact Us"
+                ? "/contactus"
                 : ""
             }
             className="relative text-gray-800 hover:text-[#125fed] transition duration-200 hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#125fed] after:transition-all after:duration-300 hover:after:w-full hover:cursor-pointer"
@@ -66,6 +68,13 @@ export const NavBar: React.FC = () => {
             className="font-Open Sans text-gray-800 hover:text-[#125fed]"
           >
             About Us
+          </Link>
+          <Link
+            to="/contactus"
+            onClick={() => setIsOpen(false)}
+            className="font-Open Sans text-gray-800 hover:text-[#125fed]"
+          >
+            Contact Us
           </Link>
         </div>
       )}

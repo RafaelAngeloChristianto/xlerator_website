@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { HomeScreen } from "./screens/HomeScreen";
 import { Products } from "./screens/Products";
 import { AboutUs } from "./screens/AboutUs";
+import { ContactUs } from "./screens/ContactUs";
 
 import { Gasoline } from "./categories/Gasoline";
 import { Engine } from "./categories/Engine";
@@ -35,6 +36,7 @@ export const App: React.FC = () => {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/products" element={<Products />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
 
         {/* categories */}
         <Route path="/gasoline" element={<Gasoline />} />
