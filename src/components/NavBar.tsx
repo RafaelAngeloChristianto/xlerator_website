@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_sideways.png";
 import { Menu, X } from "lucide-react"; // using lucide icons (install with: npm i lucide-react)
 
 export const NavBar: React.FC = () => {
@@ -9,7 +9,7 @@ export const NavBar: React.FC = () => {
   return (
     <nav className="flex items-center justify-between px-6 py-4 shadow-lg bg-white backdrop-blur-md transition-shadow duration-300 relative z-50">
       <Link to="/">
-        <img className="w-[70px] drop-shadow-md" src={logo} alt="Logo" />
+        <img className="w-[150px] drop-shadow-md" src={logo} alt="Logo" />
       </Link>
 
       {/* Desktop Menu */}

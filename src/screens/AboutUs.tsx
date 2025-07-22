@@ -10,35 +10,34 @@ export const AboutUs: React.FC = () => {
     <>
       <NavBar />
 
-      <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 px-6 py-16 font-sans">
-        <div className="max-w-screen-lg mx-auto space-y-24">
-          {/* xlerator */}
+      <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 px-4 sm:px-6 py-10 sm:py-16 font-sans">
+        <div className="max-w-screen-lg mx-auto space-y-20 sm:space-y-24">
+          {/* XLERATOR */}
           <motion.section
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-10 border border-blue-100"
+            className="space-y-8 bg-white/80 backdrop-blur-md shadow-lg rounded-2xl px-6 sm:px-10 py-8 sm:py-10 border border-blue-100"
           >
-            <h1 className="text-center text-4xl font-bold text-blue-800 font-display">
+            <h1 className="text-center text-3xl sm:text-4xl font-bold text-blue-800 font-display">
               What is XLERATOR?
             </h1>
-            <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10">
               <img
                 src={logo}
                 alt="Xlerator Logo"
-                className="w-[250px] md:w-[300px] flex-shrink-0"
+                className="w-full max-w-[220px] sm:max-w-[250px] md:max-w-[300px] flex-shrink-0"
               />
-
               <div className="flex-1 space-y-8">
                 <motion.div
-                  className="space-y-4"
+                  className="space-y-3"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
                   <span className="font-semibold">English:</span>
-                  <p className="text-lg leading-relaxed text-gray-700 text-justify">
+                  <p className="text-base sm:text-lg leading-relaxed text-gray-700 text-justify">
                     Xlerator is a modern automotive product platform offering a
                     wide range of solutions including gasoline, diesel, engine
                     oils, and service products. With a clean and dynamic design,
@@ -52,13 +51,13 @@ export const AboutUs: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="space-y-4"
+                  className="space-y-3"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
                   <span className="font-semibold">Indonesian:</span>
-                  <p className="text-lg leading-relaxed text-gray-700 text-justify">
+                  <p className="text-base sm:text-lg leading-relaxed text-gray-700 text-justify">
                     Xlerator adalah platform produk otomotif modern yang
                     menawarkan berbagai solusi, termasuk bensin, solar, oli
                     mesin, dan produk layanan lainnya. Dengan desain yang bersih
@@ -76,20 +75,20 @@ export const AboutUs: React.FC = () => {
             </div>
           </motion.section>
 
-          {/* pt */}
+          {/* PT EXCEL */}
           <motion.section
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-12 bg-blue-50/70 backdrop-blur-md rounded-2xl p-10 shadow-md border border-blue-200"
+            className="space-y-10 sm:space-y-12 bg-blue-50/70 backdrop-blur-md rounded-2xl px-6 sm:px-10 py-8 sm:py-10 shadow-md border border-blue-200"
           >
-            <h2 className="text-center text-4xl font-bold text-blue-800 font-display">
+            <h2 className="text-center text-3xl sm:text-4xl font-bold text-blue-800 font-display">
               What is PT EXCEL SEJAHTERA AUTO?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 items-center">
               <motion.div
-                className="text-lg leading-relaxed space-y-4 text-gray-700"
+                className="text-base sm:text-lg leading-relaxed space-y-4 text-gray-700"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -129,7 +128,7 @@ export const AboutUs: React.FC = () => {
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <img
-                  className="w-[400px] rounded-"
+                  className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]"
                   src={excellogo}
                   alt="Logo PT Excel"
                 />
