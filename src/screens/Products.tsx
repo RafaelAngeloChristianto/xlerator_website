@@ -11,6 +11,7 @@ import gasoline from "../assets/categories/GASOLINE.png";
 import engine from "../assets/categories/ENGINE.png";
 import diesel from "../assets/categories/DIESEL.png";
 import serviceproduct from "../assets/categories/SERVICE PRODUCT.png";
+import type { Variants } from "framer-motion";
 
 const categories = [
   { name: "Gasoline", image: gasoline, link: "/gasoline" },
@@ -19,23 +20,23 @@ const categories = [
   { name: "Service Products", image: serviceproduct, link: "/serviceproduct" },
 ];
 
-const fadeInVariant = {
-  hidden: (i: number) => ({
+const fadeInVariant: Variants = {
+  hidden: {
     opacity: 0,
-    y: 30,
+    y: 20,
     scale: 0.95,
-  }),
-  visible: (i: number) => ({
+  },
+  visible: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      delay: i * 0.2,
+      delay: 0.1,
       duration: 0.5,
       type: "spring",
-      stiffness: 80,
+      stiffness: 100,
     },
-  }),
+  },
 };
 
 export const Products: React.FC = () => {
@@ -58,9 +59,9 @@ export const Products: React.FC = () => {
             <motion.div
               key={category.name}
               custom={index}
+              variants={fadeInVariant}
               initial="hidden"
               animate="visible"
-              variants={fadeInVariant}
               className="flex justify-center"
             >
               <Link to={category.link}>
