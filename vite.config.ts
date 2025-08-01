@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+// Auto-detect base depending on environment
 export default defineConfig({
-  base: "/xlerator_website/", // IMPORTANT for GitHub Pages
+  base: process.env.NODE_ENV === "production" ? "/xlerator_website/" : "/",
   plugins: [react()],
 });
