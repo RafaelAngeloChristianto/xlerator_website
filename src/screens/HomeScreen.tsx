@@ -5,12 +5,6 @@ import { Link } from "react-router-dom";
 
 import home_img from "../assets/home_img.png";
 import products_img from "../assets/products.png";
-
-import gasoline from "../assets/categories/GASOLINE.png";
-import engine from "../assets/categories/ENGINE.png";
-import diesel from "../assets/categories/DIESEL.png";
-import serviceproduct from "../assets/categories/SERVICE PRODUCT.png";
-
 import billboard from "../assets/billboard.png";
 
 export const HomeScreen: React.FC = () => {
@@ -22,7 +16,6 @@ export const HomeScreen: React.FC = () => {
   const faqRef = useRef<HTMLHeadingElement>(null);
   const [categoriesVisible, setCategoriesVisible] = useState(false);
   const [faqVisible, setFaqVisible] = useState(false);
-
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -51,13 +44,13 @@ export const HomeScreen: React.FC = () => {
     },
   ];
 
-  // Initial fade-in on mount for image
+  // Fade-in on mount
   useEffect(() => {
     const initialFade = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(initialFade);
   }, []);
 
-  // Auto image slider
+  // Image auto-slider
   useEffect(() => {
     const fadeOut = setTimeout(() => setIsVisible(false), 3700);
     const fadeIn = setTimeout(() => {
@@ -78,7 +71,7 @@ export const HomeScreen: React.FC = () => {
     }, 300);
   };
 
-  // Scroll animation for sections
+  // Intersection observer for animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -104,90 +97,95 @@ export const HomeScreen: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       <NavBar />
 
       {/* Hero Image Slider */}
-      <div className="relative w-full max-w-[1920px] mx-auto mt-10">
+      <div className="relative w-full max-w-[1920px] mx-auto mt-10 shadow-xl rounded-xl overflow-hidden">
         <img
           src={images[currentIndex]}
           alt="Slider"
-          className={`w-full transition-all duration-500 ease-in-out transform ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`w-full transition-all duration-700 ease-in-out transform ${
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         />
 
-        {/* Circle indicators */}
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-4">
+        {/* Circle Indicators */}
+        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-3">
           {images.map((_, idx) => (
             <button
               key={idx}
               onClick={() => handleManualSwitch(idx)}
-              className={`w-3 h-3 rounded-full border-2 cursor-pointer ${
-                currentIndex === idx ? "bg-black" : "bg-white"
-              } transition-all duration-300`}
+              className={`w-4 h-4 rounded-full border-2 ${
+                currentIndex === idx ? "bg-[#383c8c]" : "bg-white"
+              } transition-all duration-300 shadow`}
             ></button>
           ))}
         </div>
       </div>
 
       {/* Product Categories */}
-      <h1 className="text-center mt-[70px] text-[30px] font-Hammersmith One font-bold mb-[30px]">
-        PRODUCT CATEGORIES
-      </h1>
       <section
         ref={categoriesRef}
-        className={`flex flex-wrap justify-center items-center gap-6 md:gap-10 transition-all duration-700 ${
+        className={`max-w-6xl mx-auto mt-[80px] px-6 flex flex-col md:flex-row items-center gap-12 transition-all duration-700 ${
           categoriesVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-5"
         }`}
       >
-        <Link to="gasoline">
-          <div className="p-5 rounded-[20px] shadow-lg w-[200px] h-[200px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] flex flex-col column justify-center items-center hover:cursor-pointer bg-white hover:scale-105">
-            <img src={gasoline} alt="Gasoline" />
-          </div>
-        </Link>
-        <Link to="engine">
-          <div className="p-10 rounded-[20px] shadow-lg w-[200px] h-[200px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] flex flex-col justify-center items-center hover:cursor-pointer bg-white hover:scale-105">
-            <img src={engine} alt="Engine" />
-          </div>
-        </Link>
-        <Link to="diesel">
-          <div className="p-10 rounded-[20px] shadow-lg w-[200px] h-[200px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] flex flex-col justify-center items-center hover:cursor-pointer bg-white hover:scale-105">
-            <img src={diesel} alt="Diesel" />
-          </div>
-        </Link>
-        <Link to="serviceproduct">
-          <div className="p-5 rounded-[20px] shadow-lg w-[290px] h-[200px] sm:w-[270px] sm:h-[180px] md:w-[290px] md:h-[200px] flex flex-col justify-center items-center hover:cursor-pointer bg-white hover:scale-105">
-            <img
-              className="mt-[10px]"
-              src={serviceproduct}
-              alt="Service Product"
-            />
-          </div>
-        </Link>
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-[36px] font-bold mb-4 text-[#383c8c]">
+            Explore Our Product Categories
+          </h2>
+          <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+            Discover a full range of automotive fluids – from high-performance
+            gasoline and diesel oils to engine lubricants and specialized
+            service products.
+          </p>
+          <Link
+            to="/products"
+            className="inline-flex items-center px-6 py-3 bg-[#383c8c] text-white rounded-full hover:bg-[#2f336b] transition duration-300 shadow-md text-base font-semibold"
+          >
+            Explore Product Categories
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+
+        <div className="flex-1 flex justify-center items-center">
+          <img
+            src={products_img}
+            alt="Product Categories"
+            className="max-w-full md:max-w-[450px] object-contain rounded-xl shadow-lg"
+          />
+        </div>
       </section>
 
       {/* FAQ Section */}
       <h1
         ref={faqRef}
-        className={`text-center mt-[100px] text-[30px] font-Hammersmith One font-bold transition-all duration-700 ${
+        className={`text-center mt-[100px] text-[36px] font-bold text-[#383c8c] transition-all duration-700 ${
           faqVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
       >
-        FAQs
+        Frequently Asked Questions
       </h1>
-      <section className="px-6 max-w-6xl mx-auto mt-10 mb-30 flex flex-col md:flex-row gap-10 items-start md:items-start">
-        {/* FAQ List */}
+      <section className="px-6 max-w-6xl mx-auto mt-10 mb-28 flex flex-col md:flex-row gap-12">
         <div className="flex-1 space-y-6">
           {faqData.map((faq, index) => (
             <div
               key={index}
               style={{
-                transitionDelay: faqVisible ? `${index * 150}ms` : "0ms",
+                transitionDelay: faqVisible ? `${index * 100}ms` : "0ms",
               }}
-              className={`bg-white rounded-xl shadow-md transform transition-opacity transition-transform duration-700 ease-in-out ${
+              className={`bg-white rounded-xl shadow-lg transform transition duration-700 ease-in-out ${
                 faqVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-5"
@@ -195,7 +193,7 @@ export const HomeScreen: React.FC = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-gray-800 focus:outline-none cursor-pointer mt-[30px]"
+                className="w-full px-6 py-4 flex justify-between items-center text-lg font-medium text-gray-800 hover:bg-gray-100 transition rounded-t-xl cursor-pointer"
               >
                 <span>{faq.question}</span>
                 <svg
@@ -211,8 +209,8 @@ export const HomeScreen: React.FC = () => {
                 </svg>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out px-6 text-gray-600 ${
-                  activeIndex === index ? "max-h-40 py-2" : "max-h-0"
+                className={`overflow-hidden transition-all duration-500 px-6 text-gray-600 ${
+                  activeIndex === index ? "max-h-40 py-3" : "max-h-0"
                 }`}
               >
                 {faq.answer}
@@ -221,12 +219,11 @@ export const HomeScreen: React.FC = () => {
           ))}
         </div>
 
-        {/* Billboard Image */}
         <div className="flex-1 flex justify-center items-start">
           <img
-            className="w-full max-w-[500px] object-contain shadow-lg rounded-xl"
             src={billboard}
             alt="Billboard"
+            className="w-full max-w-[500px] rounded-xl shadow-lg object-contain"
           />
         </div>
       </section>

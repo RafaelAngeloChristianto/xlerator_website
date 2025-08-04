@@ -140,7 +140,7 @@ export const AboutUs: React.FC = () => {
       </div>
 
       {/* Website managed by */}
-      <div className="text-right px-6 py-4 text-gray-600">
+      <div className="text-right mb-[-50px] mr-[20px] px-6 py-4 text-gray-600">
         <span className="text-xs sm:text-sm block">Website managed by</span>
         <img
           src={caligraphy}
