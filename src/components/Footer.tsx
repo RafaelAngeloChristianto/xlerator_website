@@ -40,6 +40,13 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
             </Link>
+            <Link to="/contactus">
+              <li>
+                <a href="#" className="hover:text-[#A1C08F]">
+                  Contact Us
+                </a>
+              </li>
+            </Link>
           </ul>
 
           {/* Product Categories Section */}
