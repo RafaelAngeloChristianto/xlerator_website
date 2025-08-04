@@ -171,7 +171,7 @@ export const HomeScreen: React.FC = () => {
 
         <div className="flex-1 flex justify-center items-center">
           <img
-            src={logo_building}
+            src={products_img}
             alt="Product Categories"
             className="max-w-full md:max-w-[650px] object-contain rounded-xl shadow-lg"
           />
