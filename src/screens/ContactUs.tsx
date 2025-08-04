@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 
 export const ContactUs: React.FC = () => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col epic-background">
       <NavBar />
 
-      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 py-10 px-4">
+      <div className="flex-1 py-10 px-4">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           {/* Animated Logo */}
           <motion.img
@@ -23,7 +23,7 @@ export const ContactUs: React.FC = () => {
           />
 
           {/* Contact Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-xl">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-8 w-full max-w-xl border border-blue-100">
             <h2 className="text-2xl font-bold text-blue-700 mb-2">
               Get in Touch
             </h2>
@@ -89,6 +89,6 @@ export const ContactUs: React.FC = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };

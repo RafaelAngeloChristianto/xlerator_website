@@ -4,13 +4,15 @@ import { Footer } from "../components/Footer";
 import { motion } from "framer-motion";
 import excellogo from "../assets/LOGO PT EXCEL.png";
 import logo from "../assets/logo.png";
+import caligraphy from "../assets/caligraphy.png";
+import "./Products.css"; // Import for epic-background
 
 export const AboutUs: React.FC = () => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col epic-background">
       <NavBar />
 
-      <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 px-4 sm:px-6 py-10 sm:py-16 font-sans">
+      <div className="text-gray-900 px-4 sm:px-6 pt-10 font-sans flex-1">
         <div className="max-w-screen-lg mx-auto space-y-20 sm:space-y-24">
           {/* XLERATOR */}
           <motion.section
@@ -18,7 +20,7 @@ export const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 bg-white/80 backdrop-blur-md shadow-lg rounded-2xl px-6 sm:px-10 py-8 sm:py-10 border border-blue-100"
+            className="space-y-8 bg-white/80 shadow-lg rounded-2xl px-6 sm:px-10 py-8 sm:py-10 border border-blue-100"
           >
             <h1 className="text-center text-3xl sm:text-4xl font-bold text-blue-800 font-display">
               What is XLERATOR?
@@ -37,7 +39,7 @@ export const AboutUs: React.FC = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <span className="font-semibold">English:</span>
-                  <p className="text-base sm:text-lg leading-relaxed text-gray-700 text-justify">
+                  <p className="text-base sm:text-lg leading-relaxed text-gray-800 text-justify">
                     Xlerator is a modern automotive product platform offering a
                     wide range of solutions including gasoline, diesel, engine
                     oils, and service products. With a clean and dynamic design,
@@ -57,7 +59,7 @@ export const AboutUs: React.FC = () => {
                   transition={{ delay: 0.4 }}
                 >
                   <span className="font-semibold">Indonesian:</span>
-                  <p className="text-base sm:text-lg leading-relaxed text-gray-700 text-justify">
+                  <p className="text-base sm:text-lg leading-relaxed text-gray-800 text-justify">
                     Xlerator adalah platform produk otomotif modern yang
                     menawarkan berbagai solusi, termasuk bensin, solar, oli
                     mesin, dan produk layanan lainnya. Dengan desain yang bersih
@@ -81,14 +83,14 @@ export const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-10 sm:space-y-12 bg-blue-50/70 backdrop-blur-md rounded-2xl px-6 sm:px-10 py-8 sm:py-10 shadow-md border border-blue-200"
+            className="space-y-10 sm:space-y-12 bg-white/80 rounded-2xl px-6 sm:px-10 py-8 sm:py-10 shadow-md border border-blue-200"
           >
             <h2 className="text-center text-3xl sm:text-4xl font-bold text-blue-800 font-display">
               What is PT EXCEL SEJAHTERA AUTO?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 items-center">
               <motion.div
-                className="text-base sm:text-lg leading-relaxed space-y-4 text-gray-700"
+                className="text-base sm:text-lg leading-relaxed space-y-4 text-gray-800"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -99,12 +101,12 @@ export const AboutUs: React.FC = () => {
                   continued to grow over time.
                 </p>
                 <p className="text-justify">
-                  PT EXCEL SEJAHTERA AUTO <br />
-                  is committed to maintaining competitiveness in penetrating the
-                  market. With established infrastructure, efficient management,
-                  and the support of professional, honest, and resilient
-                  personnel, PT EXCEL SEJAHTERA AUTO is ready to compete with
-                  similar companies in gaining market share.
+                  PT EXCEL SEJAHTERA AUTO is committed to maintaining
+                  competitiveness in penetrating the market. With established
+                  infrastructure, efficient management, and the support of
+                  professional, honest, and resilient personnel, PT EXCEL
+                  SEJAHTERA AUTO is ready to compete with similar companies in
+                  gaining market share.
                 </p>
                 <span className="font-semibold">Indonesian:</span>
                 <p className="text-justify">
@@ -112,13 +114,12 @@ export const AboutUs: React.FC = () => {
                   berkembang dengan seiring berjalannya waktu.
                 </p>
                 <p className="text-justify">
-                  PT EXCEL SEJAHTERA AUTO <br />
-                  berkomitmen untuk tetap memiliki daya saing dalam melakukan
-                  penetrasi pasar. Dengan infrastruktur yang telah terbangun
-                  ditambah efisiensi manajemen serta dukungan tenaga-tenaga yang
-                  professional, jujur dan tangguh. PT EXCEL SEJAHTERA AUTO siap
-                  bersaing dengan perusahaan sejenis dalam perolehan pangsa
-                  pasar.
+                  PT EXCEL SEJAHTERA AUTO berkomitmen untuk tetap memiliki daya
+                  saing dalam melakukan penetrasi pasar. Dengan infrastruktur
+                  yang telah terbangun ditambah efisiensi manajemen serta
+                  dukungan tenaga-tenaga yang professional, jujur dan tangguh.
+                  PT EXCEL SEJAHTERA AUTO siap bersaing dengan perusahaan
+                  sejenis dalam perolehan pangsa pasar.
                 </p>
               </motion.div>
 
@@ -138,7 +139,17 @@ export const AboutUs: React.FC = () => {
         </div>
       </div>
 
+      {/* Website managed by */}
+      <div className="text-right px-6 py-4 text-gray-600">
+        <span className="text-xs sm:text-sm block">Website managed by</span>
+        <img
+          src={caligraphy}
+          alt="Calligraphy"
+          className="w-20 sm:w-24 object-contain inline-block"
+        />
+      </div>
+
       <Footer />
-    </>
+    </div>
   );
 };
