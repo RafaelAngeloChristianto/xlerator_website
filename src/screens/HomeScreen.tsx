@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import home_img from "../assets/home_img.png";
 import products_img from "../assets/products.png";
-import logo_kantor from "../assets/LOGO KANTOR NEW.png";
+import logo_kantor from "../assets/LOGO KANTOR NEW COMPRESSED.png";
 
 import billboard from "../assets/billboard.png"
 
