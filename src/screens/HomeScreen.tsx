@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 
 import home_img from "../assets/home_img.png";
 import products_img from "../assets/products.png";
-import billboard from "../assets/billboard.png";
 import logo_kantor from "../assets/LOGO KANTOR NEW.png";
+
+import billboard from "../assets/billboard.png"
 
 import map from "../assets/PETA EXLATOR.png";
 import manfaat from "../assets/TAGLINE XLERATOR.png";
@@ -241,7 +242,7 @@ export const HomeScreen: React.FC = () => {
         <div className="flex-1 flex justify-center items-start">
           <img
             src={billboard}
-            alt="Billboard"
+            alt="Products"
             className="w-full max-w-[500px] rounded-xl shadow-lg object-contain"
           />
         </div>
