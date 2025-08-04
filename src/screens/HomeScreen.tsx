@@ -14,7 +14,7 @@ import manfaat from "../assets/TAGLINE XLERATOR.png";
 import "../index.css"
 
 export const HomeScreen: React.FC = () => {
-  const images = [home_img, logo_kantor];
+  const images = [home_img, products_img];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
