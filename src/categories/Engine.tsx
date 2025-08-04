@@ -35,7 +35,7 @@ export const Engine: React.FC = () => {
           />
 
           <motion.h1
-            className="font-Inter text-4xl font-extrabold text-center text-gray-800 mb-4 tracking-tight"
+            className="font-inter text-4xl font-extrabold text-center text-gray-800 mb-4 tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}

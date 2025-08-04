@@ -21,8 +21,9 @@ module.exports = {
         hanuman: ["Hanuman", "serif"],
         inter: ["Inter", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
-        openSans: ["Open Sans", "sans-serif"],
+        "open-sans": ["Open Sans", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
+        display: ["Inter", "sans-serif"], // Add display font for font-display class
       },
     },
   },

@@ -10,6 +10,7 @@ import logo_kantor from "../assets/LOGO KANTOR NEW.png";
 
 import map from "../assets/PETA EXLATOR.png";
 import manfaat from "../assets/TAGLINE XLERATOR.png";
+import "../index.css"
 
 export const HomeScreen: React.FC = () => {
   const images = [home_img, logo_kantor];
@@ -101,7 +102,7 @@ export const HomeScreen: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
+    <div className="min-h-screen bg-gray-50 text-gray-800">
       <NavBar />
 
       {/* Hero Image Slider */}
@@ -189,7 +190,7 @@ export const HomeScreen: React.FC = () => {
       {/* FAQ Section */}
       <h1
         ref={faqRef}
-        className={`text-center mt-[100px] text-[36px] font-bold text-[#383c8c] transition-all duration-700 ${
+        className={`font-nunito text-center mt-[100px] text-[36px] font-bold text-[#383c8c] transition-all duration-700 ${
           faqVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
       >
@@ -249,7 +250,7 @@ export const HomeScreen: React.FC = () => {
       <section className="w-full max-w-7xl mx-auto mt-16 px-6 flex flex-col md:flex-row items-center gap-10">
         {/* Text */}
         <div className="flex-[0.8] text-center md:text-left">
-          <h3 className="font-semibold text-2xl md:text-2xl text-gray-800 leading-relaxed ">
+          <h3 className="font-inter font-semibold text-2xl md:text-[40px] text-gray-800 leading-relaxed">
             <span className="text-blue-700">Xlerator</span> memiliki client
             lebih <span className="text-blue-700">dari 150</span>
             <br />

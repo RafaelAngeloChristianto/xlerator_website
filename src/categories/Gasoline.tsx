@@ -42,7 +42,7 @@ export const Gasoline: React.FC = () => {
           />
 
           <motion.h1
-            className="font-Inter text-4xl font-extrabold text-center text-gray-800 mb-4 tracking-tight"
+            className="font-inter text-4xl font-extrabold text-center text-gray-800 mb-4 tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -51,7 +51,7 @@ export const Gasoline: React.FC = () => {
           </motion.h1>
 
           <motion.p
-            className="font-Nunito text-gray-600 text-center max-w-2xl mb-10"
+            className="font-nunito text-gray-600 text-center max-w-2xl mb-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}

@@ -28,7 +28,7 @@ export const NavBar: React.FC = () => {
                 ? "/contactus"
                 : ""
             }
-            className="font-Open Sans text-[15px] relative text-gray-800 hover:text-[#125fed] transition duration-200 hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#125fed] after:transition-all after:duration-300 hover:after:w-full hover:cursor-pointer"
+            className="font-open-sans text-[15px] relative text-gray-800 hover:text-[#125fed] transition duration-200 hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#125fed] after:transition-all after:duration-300 hover:after:w-full hover:cursor-pointer"
           >
             {item}
           </Link>
@@ -51,28 +51,28 @@ export const NavBar: React.FC = () => {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="font-Open Sans text-gray-800 hover:text-[#125fed]"
+            className="font-open-sans text-gray-800 hover:text-[#125fed]"
           >
             Home
           </Link>
           <Link
             to="/products"
             onClick={() => setIsOpen(false)}
-            className="font-Open Sans text-gray-800 hover:text-[#125fed]"
+            className="font-open-sans text-gray-800 hover:text-[#125fed]"
           >
             Products
           </Link>
           <Link
             to="/aboutus"
             onClick={() => setIsOpen(false)}
-            className="font-Open Sans text-gray-800 hover:text-[#125fed]"
+            className="font-open-sans text-gray-800 hover:text-[#125fed]"
           >
             About Us
           </Link>
           <Link
             to="/contactus"
             onClick={() => setIsOpen(false)}
-            className="font-Open Sans text-gray-800 hover:text-[#125fed]"
+            className="font-open-sans text-gray-800 hover:text-[#125fed]"
           >
             Contact Us
           </Link>

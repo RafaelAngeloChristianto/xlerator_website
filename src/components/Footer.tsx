@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=xlerator2024@gmail.com"
           >
             {" "}
-            <button className="w-[170px] h-[35px] text-[11px] font-Inter p-2 bg-[#ffffff] text-gray-900 rounded-[5px] mt-[10px] hover:cursor-pointer">
+            <button className="w-[170px] h-[35px] text-[11px] font-inter p-2 bg-[#ffffff] text-gray-900 rounded-[5px] mt-[10px] hover:cursor-pointer">
               Contact Us Here!
             </button>
           </a>
