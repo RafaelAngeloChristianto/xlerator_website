@@ -37,7 +37,7 @@ export const WiperFluid: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100-to-br px-6 py-10">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-100 via-white to-white px-6 py-10">
         <motion.div
           className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden max-w-5xl w-full"
           initial={{ opacity: 0, y: 40 }}

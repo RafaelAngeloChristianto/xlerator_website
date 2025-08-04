@@ -37,7 +37,7 @@ export const TyrePolish: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100-to-br px-6 py-10">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-100 via-white to-white px-6 py-10">
         <div className="flex bg-white rounded-2xl shadow-lg overflow-hidden max-w-5xl w-full">
           {/* Image Section */}
           <div className="w-1/2 bg-gray-50 flex items-center justify-center p-6">

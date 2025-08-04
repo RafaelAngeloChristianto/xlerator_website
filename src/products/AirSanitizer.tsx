@@ -15,6 +15,7 @@ import airaccu from "../assets/products/AIR ACCU.png";
 import wiperfluid from "../assets/products/WIPER.png";
 import tyrepolish from "../assets/products/SEMIR BAN.png";
 import shampoo from "../assets/products/SHAMPO.png";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { RelatedProductGallery } from "../components/RelatedProductGallery";
@@ -37,9 +38,11 @@ export const AirSanitizer: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100-to-br px-6 py-10">
+
+      {/* Showcase Section */}
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-100 via-white to-white px-6 py-10">
         <motion.div
-          className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden max-w-5xl w-full"
+          className="flex flex-col md:flex-row bg-white/90 border border-blue-100 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden max-w-5xl w-full"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -48,7 +51,7 @@ export const AirSanitizer: React.FC = () => {
           <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-6">
             <motion.img
               src={product}
-              alt="Air Sanitary"
+              alt="Air Sanitizer"
               className="rounded-xl shadow-md w-[500px] h-[500px] object-contain"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -59,7 +62,7 @@ export const AirSanitizer: React.FC = () => {
           {/* Content Section */}
           <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
             <h2 className="text-2xl font-bold text-blue-700 mb-2">
-              Air Sanitary
+              Air Sanitizer
             </h2>
             <h3 className="text-lg font-semibold text-gray-600 mb-4">150 ml</h3>
 
@@ -80,6 +83,7 @@ export const AirSanitizer: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* Related Products */}
       <motion.div
         className="flex justify-center items-center"
         initial={{ opacity: 0 }}
@@ -90,6 +94,7 @@ export const AirSanitizer: React.FC = () => {
         <RelatedProductGallery products={serviceProducts} />
       </motion.div>
 
+      {/* Other Categories */}
       <motion.div
         className="mt-10 px-6 py-16 text-center rounded-t-3xl"
         initial={{ opacity: 0, y: 50 }}
@@ -101,6 +106,7 @@ export const AirSanitizer: React.FC = () => {
           Explore Other Categories
         </h2>
         <div className="flex flex-wrap justify-center gap-10">
+          {/* Gasoline */}
           <Link to="/gasoline">
             <motion.div
               whileHover={{ scale: 1.08 }}
@@ -109,6 +115,7 @@ export const AirSanitizer: React.FC = () => {
               <img src={gasoline} className="w-35 h-24 object-contain mb-3" />
             </motion.div>
           </Link>
+
           {/* Engine */}
           <Link to="/engine">
             <motion.div

@@ -15,6 +15,7 @@ import airaccu from "../assets/products/AIR ACCU.png";
 import wiperfluid from "../assets/products/WIPER.png";
 import tyrepolish from "../assets/products/SEMIR BAN.png";
 import shampoo from "../assets/products/SHAMPO.png";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { RelatedProductGallery } from "../components/RelatedProductGallery";
@@ -37,9 +38,11 @@ export const BrakePartsCleaner: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100-to-br px-6 py-10">
+
+      {/* Showcase Section */}
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-100 via-white to-white px-6 py-10">
         <motion.div
-          className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden max-w-5xl w-full"
+          className="flex flex-col md:flex-row bg-white/90 border border-blue-100 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden max-w-5xl w-full"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,6 +85,7 @@ export const BrakePartsCleaner: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* Related Products */}
       <motion.div
         className="flex justify-center items-center"
         initial={{ opacity: 0 }}
@@ -92,6 +96,7 @@ export const BrakePartsCleaner: React.FC = () => {
         <RelatedProductGallery products={serviceProducts} />
       </motion.div>
 
+      {/* Other Categories */}
       <motion.div
         className="mt-10 px-6 py-16 text-center rounded-t-3xl"
         initial={{ opacity: 0, y: 50 }}
@@ -103,6 +108,7 @@ export const BrakePartsCleaner: React.FC = () => {
           Explore Other Categories
         </h2>
         <div className="flex flex-wrap justify-center gap-10">
+          {/* Gasoline */}
           <Link to="/gasoline">
             <motion.div
               whileHover={{ scale: 1.08 }}
@@ -112,6 +118,7 @@ export const BrakePartsCleaner: React.FC = () => {
             </motion.div>
           </Link>
 
+          {/* Engine */}
           <Link to="/engine">
             <motion.div
               whileHover={{ scale: 1.08 }}
@@ -125,6 +132,7 @@ export const BrakePartsCleaner: React.FC = () => {
             </motion.div>
           </Link>
 
+          {/* Diesel */}
           <Link to="/diesel">
             <motion.div
               whileHover={{ scale: 1.08 }}

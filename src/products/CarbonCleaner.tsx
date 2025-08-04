@@ -49,19 +49,21 @@ export const CarbonCleaner: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 py-8 sm:px-6 sm:py-10">
+
+      {/* Showcase Section */}
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-100 via-white to-white px-6 py-10">
         <motion.div
-          className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden max-w-5xl w-full"
+          className="flex flex-col md:flex-row bg-white/90 border border-blue-100 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden max-w-5xl w-full"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Image Section */}
-          <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-4 sm:p-6">
+          <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-6">
             <motion.img
               src={product}
               alt="Carbon Cleaner"
-              className="rounded-xl shadow-md w-full h-64 sm:h-80 md:h-[500px] object-contain"
+              className="rounded-xl shadow-md w-[500px] h-[500px] object-contain"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -69,23 +71,23 @@ export const CarbonCleaner: React.FC = () => {
           </div>
 
           {/* Content Section */}
-          <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-center">
-            <h2 className="text-xl sm:text-2xl font-bold text-blue-700 mb-2">
+          <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+            <h2 className="text-2xl font-bold text-blue-700 mb-2">
               Carbon Cleaner
             </h2>
-            <h3 className="text-base sm:text-lg font-semibold text-gray-600 mb-4">
+            <h3 className="text-lg font-semibold text-gray-600 mb-4">
               250 ml & 500 ml
             </h3>
 
-            <h4 className="text-sm sm:text-md font-semibold text-gray-800 mb-1">
+            <h4 className="text-md font-semibold text-gray-800 mb-1">
               Aplikasi
             </h4>
-            <p className="text-sm text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4">
               Gurah karbon lewat lubang busi (silahkan bertanya lebih detail ke
               team penjual)
             </p>
 
-            <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
               <li>Membersihkan ruang bakar, kubah piston, dll dari karbon</li>
               <li>Meningkatkan fungsi pengapian yang sempurna</li>
               <li>
@@ -97,8 +99,9 @@ export const CarbonCleaner: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* Related Products */}
       <motion.div
-        className="flex justify-center items-center px-4"
+        className="flex justify-center items-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -107,17 +110,18 @@ export const CarbonCleaner: React.FC = () => {
         <RelatedProductGallery products={gasolineProducts} />
       </motion.div>
 
+      {/* Other Categories */}
       <motion.div
-        className="mt-10 px-4 sm:px-6 py-12 sm:py-16 text-center rounded-t-3xl"
+        className="mt-10 px-6 py-16 text-center rounded-t-3xl"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-10 tracking-tight">
+        <h2 className="text-3xl font-extrabold text-gray-800 mb-10 tracking-tight">
           Explore Other Categories
         </h2>
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-10">
+        <div className="flex flex-wrap justify-center gap-10">
           {/* Engine */}
           <Link to="/engine">
             <motion.div
@@ -127,7 +131,7 @@ export const CarbonCleaner: React.FC = () => {
               <img
                 src={engine}
                 alt="Engine"
-                className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-3"
+                className="w-24 h-24 object-contain mb-3"
               />
             </motion.div>
           </Link>
@@ -141,7 +145,7 @@ export const CarbonCleaner: React.FC = () => {
               <img
                 src={diesel}
                 alt="Diesel"
-                className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-3"
+                className="w-24 h-24 object-contain mb-3"
               />
             </motion.div>
           </Link>
