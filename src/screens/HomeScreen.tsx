@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 import home_img from "../assets/home_img.png";
 import products_img from "../assets/products.png";
 import billboard from "../assets/billboard.png";
+import logo_kantor from "../assets/LOGO KANTOR NEW.png";
+
+import map from "../assets/PETA EXLATOR.png";
+import manfaat from "../assets/TAGLINE XLERATOR.png";
 
 export const HomeScreen: React.FC = () => {
-  const images = [home_img, products_img];
+  const images = [home_img, logo_kantor];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -172,10 +176,15 @@ export const HomeScreen: React.FC = () => {
         </div>
       </section>
 
-      {/* manfaat */}
-      <section>
-        {/* <img src={} alt="" /> */}
-      </section>
+      <div className="relative w-full mt-[50px]">
+        {/* Top fade */}
+        <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent z-10 pointer-events-none" />
+
+        <img src={manfaat} className="w-full h-auto" alt="Manfaat" />
+
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent z-10 pointer-events-none" />
+      </div>
 
       {/* FAQ Section */}
       <h1
@@ -233,6 +242,27 @@ export const HomeScreen: React.FC = () => {
             src={billboard}
             alt="Billboard"
             className="w-full max-w-[500px] rounded-xl shadow-lg object-contain"
+          />
+        </div>
+      </section>
+
+      <section className="w-full max-w-7xl mx-auto mt-16 px-6 flex flex-col md:flex-row items-center gap-10">
+        {/* Text */}
+        <div className="flex-[0.8] text-center md:text-left">
+          <h3 className="font-semibold text-2xl md:text-2xl text-gray-800 leading-relaxed ">
+            <span className="text-blue-700">Xlerator</span> memiliki client
+            lebih <span className="text-blue-700">dari 150</span>
+            <br />
+            di seluruh Indonesia
+          </h3>
+        </div>
+
+        {/* Map Image */}
+        <div className="flex-[1.2]">
+          <img
+            src={map}
+            alt="Map"
+            className="w-full max-w-[1500px] h-auto object-contain rounded-xl shadow-md"
           />
         </div>
       </section>

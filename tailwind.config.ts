@@ -2,9 +2,7 @@
 import plugin from "tailwind-scrollbar";
 
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}", // make sure this covers your files
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       animation: {
@@ -16,7 +14,17 @@ module.exports = {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
+      fontFamily: {
+        jomolhari: ["Jomolhari", "serif"],
+        hammersmith: ["Hammersmith One", "sans-serif"],
+        halant: ["Halant", "serif"],
+        hanuman: ["Hanuman", "serif"],
+        inter: ["Inter", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
+      },
     },
   },
-  plugins: [plugin], // 👈 Here is where you put the plugin
+  plugins: [plugin],
 };
