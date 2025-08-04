@@ -28,7 +28,7 @@ export const NavBar: React.FC = () => {
                 ? "/contactus"
                 : ""
             }
-            className="relative text-gray-800 hover:text-[#125fed] transition duration-200 hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#125fed] after:transition-all after:duration-300 hover:after:w-full hover:cursor-pointer"
+            className="font-Open Sans text-[15px] relative text-gray-800 hover:text-[#125fed] transition duration-200 hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#125fed] after:transition-all after:duration-300 hover:after:w-full hover:cursor-pointer"
           >
             {item}
           </Link>
