@@ -163,7 +163,7 @@ export const HomeScreen: React.FC = () => {
           <img
             src={products_img}
             alt="Product Categories"
-            className="max-w-full md:max-w-[450px] object-contain rounded-xl shadow-lg"
+            className="max-w-full md:max-w-[650px] object-contain rounded-xl shadow-lg"
           />
         </div>
       </section>
