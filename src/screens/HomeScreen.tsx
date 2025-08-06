@@ -174,47 +174,7 @@ export const HomeScreen: React.FC = () => {
         </div>
       </section>
 
-      {/* Icon Cards Section with Blue Gradient Background */}
-      <section className="w-full pb-40 pt-20 mt-[50px] relative overflow-hidden bg-gradient-to-b from-gray-50 via-[#00BFF3] to-[#00AEEF]">
-        {/* Smooth gray-50 fade at bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gray-50 to-transparent z-0 pointer-events-none" />
-
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 gap-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-          {[
-            {
-              icon: "fa-tachometer-alt",
-              text: "Tenaga Maksimal,\nPerforma Optimal!",
-            },
-            {
-              icon: "fa-cogs",
-              text: "Mesin Sehat,\nMobil Hebat",
-            },
-            {
-              icon: "fa-flask",
-              text: "Teknologi Formula,\nPerlindungan Juara",
-            },
-            {
-              icon: "fa-tools",
-              text: "Rawat Mesinnya,\nRasakan Bedanya",
-            },
-          ].map((card, idx) => (
-            <div
-              key={idx}
-              className="bg-gray-50 rounded-[60px_60px_60px_0] shadow-[0_8px_0_0_#26357d] p-8 flex items-center gap-6 transition transform hover:scale-[1.02]"
-            >
-              <i
-                className={`fas ${card.icon} text-[48px] text-[#26357d] min-w-[48px]`}
-              ></i>
-              <p className="text-[26px] font-semibold text-[#26357d] leading-snug whitespace-pre-line">
-                {card.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Smooth transition fade from blue to white */}
-      <div className="w-full h-32 bg-gradient-to-b from-white to-transparent -mt-32 z-10 pointer-events-none" />
+    
 
       {/* FAQ Section */}
       <h1
@@ -272,25 +232,6 @@ export const HomeScreen: React.FC = () => {
             src={billboard}
             alt="Products"
             className="w-full max-w-[500px] rounded-xl shadow-lg object-contain"
-          />
-        </div>
-      </section>
-
-      {/* Clients Section */}
-      <section className="w-full max-w-7xl mx-auto mt-16 px-6 flex flex-col md:flex-row items-center gap-10">
-        <div className="flex-[0.8] text-center md:text-left">
-          <h3 className="font-inter font-semibold text-2xl md:text-[40px] text-gray-800 leading-relaxed">
-            <span className="text-blue-700">Xlerator</span> memiliki client
-            lebih <span className="text-blue-700">dari 150</span>
-            <br />
-            di seluruh Indonesia
-          </h3>
-        </div>
-        <div className="flex-[1.2]">
-          <img
-            src={map}
-            alt="Map"
-            className="w-full max-w-[1500px] h-auto object-contain rounded-xl shadow-md"
           />
         </div>
       </section>
