@@ -142,11 +142,13 @@ export const AboutUs: React.FC = () => {
       {/* Website managed by */}
       <div className="text-right mb-[-50px] mr-[20px] px-6 py-4 text-gray-600">
         <span className="text-xs sm:text-sm block">Website managed by</span>
-        <img
-          src={caligraphy}
-          alt="Calligraphy"
-          className="w-20 sm:w-24 object-contain inline-block"
-        />
+        <a href="https://rafaelangelo.vercel.app/" target="_blank">
+          <img
+            src={caligraphy}
+            alt="Calligraphy"
+            className="w-20 sm:w-24 object-contain inline-block"
+          />
+        </a>
       </div>
 
       <Footer />

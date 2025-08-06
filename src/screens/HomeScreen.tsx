@@ -5,19 +5,16 @@ import { Link } from "react-router-dom";
 
 import home_img from "../assets/home_img.png";
 import products_img from "../assets/products.png";
-
-import logo_building from "../assets/LOGO KANTOR NEW COMPRESSED.png"
-import billboard from "../assets/billboard.png"
-
+import logo_building from "../assets/LOGO KANTOR NEW COMPRESSED.png";
+import billboard from "../assets/billboard.png";
 import map from "../assets/PETA EXLATOR.png";
-import manfaat from "../assets/TAGLINE XLERATOR.png";
-import "../index.css"
+// import manfaat from "../assets/TAGLINE XLERATOR.png";
+import "../index.css";
 
 export const HomeScreen: React.FC = () => {
   const images = [home_img, logo_building];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-
   const categoriesRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLHeadingElement>(null);
   const [categoriesVisible, setCategoriesVisible] = useState(false);
@@ -115,10 +112,9 @@ export const HomeScreen: React.FC = () => {
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         />
-
         {/* Soft bottom fade overlay */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent pointer-events-none z-10" />
-
+        {/* Soft bottom fade overlay */}
+        <div className="hidden md:block absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent pointer-events-none z-10" />
         {/* Circle Indicators */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 transform flex gap-3 z-20">
           {images.map((_, idx) => (
@@ -178,15 +174,47 @@ export const HomeScreen: React.FC = () => {
         </div>
       </section>
 
-      <div className="relative w-full mt-[50px]">
-        {/* Top fade */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent z-10 pointer-events-none" />
+      {/* Icon Cards Section with Blue Gradient Background */}
+      <section className="w-full pb-40 pt-20 mt-[50px] relative overflow-hidden bg-gradient-to-b from-gray-50 via-[#00BFF3] to-[#00AEEF]">
+        {/* Smooth gray-50 fade at bottom */}
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gray-50 to-transparent z-0 pointer-events-none" />
 
-        <img src={manfaat} className="w-full h-auto" alt="Manfaat" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 gap-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+          {[
+            {
+              icon: "fa-tachometer-alt",
+              text: "Tenaga Maksimal,\nPerforma Optimal!",
+            },
+            {
+              icon: "fa-cogs",
+              text: "Mesin Sehat,\nMobil Hebat",
+            },
+            {
+              icon: "fa-flask",
+              text: "Teknologi Formula,\nPerlindungan Juara",
+            },
+            {
+              icon: "fa-tools",
+              text: "Rawat Mesinnya,\nRasakan Bedanya",
+            },
+          ].map((card, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-50 rounded-[60px_60px_60px_0] shadow-[0_8px_0_0_#26357d] p-8 flex items-center gap-6 transition transform hover:scale-[1.02]"
+            >
+              <i
+                className={`fas ${card.icon} text-[48px] text-[#26357d] min-w-[48px]`}
+              ></i>
+              <p className="text-[26px] font-semibold text-[#26357d] leading-snug whitespace-pre-line">
+                {card.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#f7f9fc] via-[#f7f9fc]/80 to-transparent z-10 pointer-events-none" />
-      </div>
+      {/* Smooth transition fade from blue to white */}
+      <div className="w-full h-32 bg-gradient-to-b from-white to-transparent -mt-32 z-10 pointer-events-none" />
 
       {/* FAQ Section */}
       <h1
@@ -248,8 +276,8 @@ export const HomeScreen: React.FC = () => {
         </div>
       </section>
 
+      {/* Clients Section */}
       <section className="w-full max-w-7xl mx-auto mt-16 px-6 flex flex-col md:flex-row items-center gap-10">
-        {/* Text */}
         <div className="flex-[0.8] text-center md:text-left">
           <h3 className="font-inter font-semibold text-2xl md:text-[40px] text-gray-800 leading-relaxed">
             <span className="text-blue-700">Xlerator</span> memiliki client
@@ -258,8 +286,6 @@ export const HomeScreen: React.FC = () => {
             di seluruh Indonesia
           </h3>
         </div>
-
-        {/* Map Image */}
         <div className="flex-[1.2]">
           <img
             src={map}
