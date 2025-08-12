@@ -13,6 +13,14 @@ import "../index.css";
 
 export const HomeScreen: React.FC = () => {
   const images = [home_img, logo_building];
+  // Image preloading effect
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const categoriesRef = useRef<HTMLDivElement>(null);
@@ -46,6 +54,7 @@ export const HomeScreen: React.FC = () => {
       answer: "No, returns and exchanges are not allowed with any purchases.",
     },
   ];
+
 
   // Fade-in on mount
   useEffect(() => {
@@ -173,8 +182,6 @@ export const HomeScreen: React.FC = () => {
           />
         </div>
       </section>
-
-    
 
       {/* FAQ Section */}
       <h1
