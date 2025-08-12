@@ -7,7 +7,7 @@ import home_img from "../assets/home_img.png";
 import products_img from "../assets/products.png";
 import logo_building from "../assets/LOGO KANTOR NEW COMPRESSED.png";
 import billboard from "../assets/billboard.png";
-import map from "../assets/PETA EXLATOR.png";
+// import map from "../assets/PETA EXLATOR.png";
 // import manfaat from "../assets/TAGLINE XLERATOR.png";
 import "../index.css";
 
