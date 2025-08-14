@@ -136,7 +136,7 @@ export const Footer: React.FC = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
-        © 2025 Xlerator. All rights reserved.
+        &copy; {new Date().getFullYear()} Xlerator. All rights reserved.
       </div>
     </footer>
   );
