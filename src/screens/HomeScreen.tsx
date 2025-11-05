@@ -81,7 +81,7 @@ export const HomeScreen: React.FC = () => {
     }, 300);
   };
 
-  // intersection
+  // intersection observer for animation triggers
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -105,90 +105,91 @@ export const HomeScreen: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 overflow-hidden">
       <NavBar />
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative w-full max-w-[1920px] mx-auto overflow-hidden">
-        <div className="relative h-[500px] md:h-[650px] lg:h-[750px]">
+        <div className="relative h-[70vh] min-h-[500px] sm:h-[80vh] md:h-[650px] lg:h-[750px] flex items-center justify-center">
           <img
             src={images[currentIndex]}
             alt="Hero"
-            className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-105"
-              }`}
+            className={`absolute inset-0 w-full h-full 
+        object-cover object-center
+        transition-all duration-[1500ms] ease-out 
+        ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
           />
 
-          {/* Subtle gradient layers */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#383c8c]/40 via-transparent to-transparent" />
+          {/* Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#383c8c]/60 via-transparent to-transparent pointer-events-none" />
 
-          {/* Content */}
-          <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-6 w-full">
-              <div
-                className={`max-w-2xl transition-all duration-1000 ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-                  }`}
-              >
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-                  Fuel Your{" "}
-                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-white to-blue-200 mt-1">
-                    Performance
-                  </span>
-                </h1>
-                <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl leading-relaxed">
-                  Premium automotive fluids and lubricants crafted for lasting
-                  performance and protection.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    to="/products"
-                    className="px-8 py-4 bg-white text-[#383c8c] rounded-full font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-[#383c8c]/40 flex items-center gap-2"
+          {/* Text Content */}
+          <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl w-full flex flex-col justify-center items-start text-left">
+            <div
+              className={`max-w-2xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+            >
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
+                Fuel Your{" "}
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-white to-blue-200 mt-1 sm:mt-2">
+                  Performance
+                </span>
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-6 sm:mb-8 max-w-xl leading-relaxed drop-shadow-lg">
+                Premium automotive fluids and lubricants crafted for lasting
+                performance and protection.
+              </p>
+
+              <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 w-full xs:w-auto">
+                <Link
+                  to="/products"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#383c8c] rounded-full font-bold hover:bg-blue-50 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-[#383c8c]/40 flex items-center justify-center gap-2 text-sm sm:text-base"
+                >
+                  Explore Products
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
                   >
-                    Explore Products
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M13 7l5 5-5 5M6 12h12" />
-                    </svg>
-                  </Link>
-                  <Link
-                    to="/aboutus"
-                    className="px-8 py-4 border-2 border-white/50 text-white rounded-full font-bold hover:bg-white/20 transition-all duration-300"
-                  >
-                    Learn More
-                  </Link>
-                </div>
+                    <path d="M13 7l5 5-5 5M6 12h12" />
+                  </svg>
+                </Link>
+
+                <Link
+                  to="/aboutus"
+                  className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/70 text-white rounded-full font-bold hover:bg-white/20 active:scale-95 transition-all duration-300 text-center text-sm sm:text-base"
+                >
+                  Learn More
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-slate-50 via-slate-50/95 to-transparent" />
+          {/* Bottom gradient fade */}
+          <div className="absolute bottom-0 left-0 w-full h-20 sm:h-24 md:h-32 bg-gradient-to-t from-slate-50 via-slate-50/95 to-transparent" />
         </div>
 
         {/* Indicators */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3">
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-20">
           {images.map((_, idx) => (
             <button
               key={idx}
               onClick={() => handleManualSwitch(idx)}
               className={`transition-all rounded-full ${currentIndex === idx
-                ? "w-10 h-3 bg-gradient-to-r from-[#383c8c] to-blue-600"
-                : "w-3 h-3 bg-white/80 hover:scale-125"
+                ? "w-6 sm:w-8 md:w-10 h-2.5 sm:h-3 bg-gradient-to-r from-[#383c8c] to-blue-600"
+                : "w-2.5 sm:w-3 h-2.5 sm:h-3 bg-white/80 hover:scale-125"
                 }`}
             />
           ))}
         </div>
       </section>
 
-      {/* Products */}
+
+
+      {/* Products Section */}
       <section
         ref={categoriesRef}
-        className={`max-w-7xl mx-auto px-6 py-24 transition-all duration-1000 ${categoriesVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
+        className={`max-w-7xl mx-auto px-6 py-24 transition-all duration-1000 ${categoriesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
       >
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -250,7 +251,7 @@ export const HomeScreen: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ Section */}
       <section className="mt-20 mb-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -259,9 +260,7 @@ export const HomeScreen: React.FC = () => {
             </span>
             <h2
               ref={faqRef}
-              className={`text-4xl md:text-5xl font-extrabold mt-4 transition-all duration-700 ${faqVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6"
+              className={`text-4xl md:text-5xl font-extrabold mt-4 transition-all duration-700 ${faqVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
             >
               Frequently Asked{" "}
@@ -314,9 +313,7 @@ export const HomeScreen: React.FC = () => {
             </div>
 
             <div
-              className={`transition-all duration-1000 ${faqVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-6"
+              className={`transition-all duration-1000 ${faqVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
                 }`}
             >
               <img
